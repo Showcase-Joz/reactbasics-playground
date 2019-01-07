@@ -1,32 +1,170 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+html, .app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #282c34;
+}
+
+.App {
+  padding-top: 5rem;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+  
+}
+
+label,
+.image-info {
+  font-variant: small-caps;
+}
+
+label.checkbox1 {
+  display: block;
+  font-style: italic;
+  font-size: 0.7rem;
+  margin: 5px;
+}
+
+label.radioselect {
+  display: inline-block;
+  font-style: italic;
+  font-size: 0.7rem;
+  margin: 5px;
+}
+
+h3 {
+  display: grid;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+h4 {
+  display: inline-block;
+  text-align: right;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.file-input {
+  display: grid;
+  grid-template-rows: 4, 100px 50px 30px 10px;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  width: max-content;
+  margin: auto;
 }
+
+/* Hide the file input using
+opacity */
+[type=file] {
+  position: absolute;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+[type=file]+label {
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  text-align: left;
+  padding: 10px;
+  width: 150px;
+  margin: 0;
+  left: 0;
+  position: relative;
+}
+
+[type=file]+label {
+  text-align: center;
+  /* Decorative */
+  background: #3399ff;
+  color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+[type=file]+label:hover {
+  background: #333;
+  border-color: #3399ff;
+}
+
+.imageBound {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.current-image {
+  max-height: 100%;
+  position: relative;
+  z-index: 0;
+  object-fit: scale-down;
+}
+
+.imageBound>button {
+  display: block;
+  position: absolute;
+  left: 0%;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  padding: 2px;
+  color: red;
+  font-weight: bold;
+  z-index: 50;
+}
+
+button.clear-hidden {
+  display: none;
+}
+
+/* SLIDER */
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  appearance: none;
+  width: 100%;
+  max-width: 50%;
+  /* Full-width */
+  height: 25px;
+  /* Specified height */
+  background: #d3d3d3;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1;
+  /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #4CAF50;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #4CAF50;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+/* SLIDER END */
